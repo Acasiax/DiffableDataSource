@@ -50,14 +50,23 @@ class ViewController: UIViewController {
     }
     
     func applySnapshot() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
-        snapshot.appendSections([.main])
-        let items = [
-            Item(title: "공지사항"),
-            Item(title: "실험실"),
-            Item(title: "버전정보")
-        ]
-        snapshot.appendItems(items)
-        dataSource.apply(snapshot, animatingDifferences: true)
+            var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+            
+            // Main 섹션 항목 추가
+            snapshot.appendSections([.main])
+            let mainItems = [
+                Item(title: "공지사항"),
+                Item(title: "실험실")
+            ]
+            snapshot.appendItems(mainItems, toSection: .main)
+            
+            // Version 섹션 항목 추가
+            snapshot.appendSections([.version])
+            let versionItems = [
+                Item(title: "버전정보")
+            ]
+            snapshot.appendItems(versionItems, toSection: .version)
+            
+            dataSource.apply(snapshot, animatingDifferences: true)
+        }
     }
-}
