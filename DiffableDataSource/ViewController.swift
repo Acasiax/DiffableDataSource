@@ -4,7 +4,6 @@
 //
 //  Created by 이윤지 on 7/19/24.
 //
-
 import UIKit
 
 struct Item: Hashable {
@@ -17,7 +16,7 @@ struct Item: Hashable {
     }
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate {
     
     enum Section {
         case main
@@ -38,6 +37,7 @@ class ViewController: UIViewController {
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.delegate = self
         view.addSubview(tableView)
     }
     
@@ -50,23 +50,33 @@ class ViewController: UIViewController {
     }
     
     func applySnapshot() {
-            var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
-            
-            // Main 섹션 항목 추가
-            snapshot.appendSections([.main])
-            let mainItems = [
-                Item(title: "공지사항"),
-                Item(title: "실험실")
-            ]
-            snapshot.appendItems(mainItems, toSection: .main)
-            
-            // Version 섹션 항목 추가
-            snapshot.appendSections([.version])
-            let versionItems = [
-                Item(title: "버전정보")
-            ]
-            snapshot.appendItems(versionItems, toSection: .version)
-            
-            dataSource.apply(snapshot, animatingDifferences: true)
-        }
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+        
+        // Main 섹션 항목 추가
+        snapshot.appendSections([.main])
+        let mainItems = [
+            Item(title: "공지사항"),
+            Item(title: "실험실")
+        ]
+        snapshot.appendItems(mainItems, toSection: .main)
+        
+        // Version 섹션 항목 추가
+        snapshot.appendSections([.version])
+        let versionItems = [
+            Item(title: "버전정보")
+        ]
+        snapshot.appendItems(versionItems, toSection: .version)
+        
+        dataSource.apply(snapshot, animatingDifferences: true)
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .clear
+        return headerView
+    }
+}
