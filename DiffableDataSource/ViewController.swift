@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     
     enum Section {
         case main
+        case version
     }
     
     var tableView: UITableView! = nil
