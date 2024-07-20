@@ -18,6 +18,7 @@
 		AAA21B572C4B789D0069EA9B /* CustomBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA21B562C4B789D0069EA9B /* CustomBasicViewController.swift */; };
 		AAA21B5B2C4B7CF50069EA9B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AAA21B5A2C4B7CF50069EA9B /* SnapKit */; };
 		AAA21B5D2C4B884B0069EA9B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA21B5C2C4B884B0069EA9B /* SettingViewController.swift */; };
+		AAA21B5F2C4B89840069EA9B /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA21B5E2C4B89840069EA9B /* CustomTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		AAA21B512C4B77F90069EA9B /* SimpleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleViewController.swift; sourceTree = "<group>"; };
 		AAA21B562C4B789D0069EA9B /* CustomBasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBasicViewController.swift; sourceTree = "<group>"; };
 		AAA21B5C2C4B884B0069EA9B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		AAA21B5E2C4B89840069EA9B /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				AAA21B582C4B78A70069EA9B /* 과제 */,
-				AAA21B552C4B78520069EA9B /* 커스텀 */,
+				AAA21B552C4B78520069EA9B /* 커스텀.이론공부 */,
 				AAA21B542C4B78490069EA9B /* 수업 */,
 				AAA21B3A2C4A8D130069EA9B /* AppDelegate.swift */,
 				AAA21B3C2C4A8D130069EA9B /* SceneDelegate.swift */,
@@ -90,12 +92,13 @@
 			path = "수업";
 			sourceTree = "<group>";
 		};
-		AAA21B552C4B78520069EA9B /* 커스텀 */ = {
+		AAA21B552C4B78520069EA9B /* 커스텀.이론공부 */ = {
 			isa = PBXGroup;
 			children = (
 				AAA21B562C4B789D0069EA9B /* CustomBasicViewController.swift */,
+				AAA21B5E2C4B89840069EA9B /* CustomTableViewController.swift */,
 			);
-			name = "커스텀";
+			name = "커스텀.이론공부";
 			path = "커스텀";
 			sourceTree = "<group>";
 		};
@@ -189,6 +192,7 @@
 				AAA21B522C4B77F90069EA9B /* SimpleCollectionViewController.swift in Sources */,
 				AAA21B572C4B789D0069EA9B /* CustomBasicViewController.swift in Sources */,
 				AAA21B3F2C4A8D130069EA9B /* ViewController.swift in Sources */,
+				AAA21B5F2C4B89840069EA9B /* CustomTableViewController.swift in Sources */,
 				AAA21B3B2C4A8D130069EA9B /* AppDelegate.swift in Sources */,
 				AAA21B5D2C4B884B0069EA9B /* SettingViewController.swift in Sources */,
 				AAA21B3D2C4A8D130069EA9B /* SceneDelegate.swift in Sources */,
