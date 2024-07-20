@@ -17,8 +17,9 @@
 		AAA21B532C4B77F90069EA9B /* SimpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA21B512C4B77F90069EA9B /* SimpleViewController.swift */; };
 		AAA21B572C4B789D0069EA9B /* CustomBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA21B562C4B789D0069EA9B /* CustomBasicViewController.swift */; };
 		AAA21B5B2C4B7CF50069EA9B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AAA21B5A2C4B7CF50069EA9B /* SnapKit */; };
-		AAA21B5D2C4B884B0069EA9B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA21B5C2C4B884B0069EA9B /* SettingViewController.swift */; };
+		AAA21B5D2C4B884B0069EA9B /* FocusModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA21B5C2C4B884B0069EA9B /* FocusModeViewController.swift */; };
 		AAA21B5F2C4B89840069EA9B /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA21B5E2C4B89840069EA9B /* CustomTableViewController.swift */; };
+		AAA21B612C4B8DE90069EA9B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA21B602C4B8DE90069EA9B /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +34,9 @@
 		AAA21B502C4B77F90069EA9B /* SimpleCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewController.swift; sourceTree = "<group>"; };
 		AAA21B512C4B77F90069EA9B /* SimpleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleViewController.swift; sourceTree = "<group>"; };
 		AAA21B562C4B789D0069EA9B /* CustomBasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBasicViewController.swift; sourceTree = "<group>"; };
-		AAA21B5C2C4B884B0069EA9B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		AAA21B5C2C4B884B0069EA9B /* FocusModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusModeViewController.swift; sourceTree = "<group>"; };
 		AAA21B5E2C4B89840069EA9B /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
+		AAA21B602C4B8DE90069EA9B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +107,8 @@
 		AAA21B582C4B78A70069EA9B /* 과제 */ = {
 			isa = PBXGroup;
 			children = (
-				AAA21B5C2C4B884B0069EA9B /* SettingViewController.swift */,
+				AAA21B5C2C4B884B0069EA9B /* FocusModeViewController.swift */,
+				AAA21B602C4B8DE90069EA9B /* SettingViewController.swift */,
 			);
 			name = "과제";
 			path = "과제";
@@ -189,12 +192,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAA21B532C4B77F90069EA9B /* SimpleViewController.swift in Sources */,
+				AAA21B612C4B8DE90069EA9B /* SettingViewController.swift in Sources */,
 				AAA21B522C4B77F90069EA9B /* SimpleCollectionViewController.swift in Sources */,
 				AAA21B572C4B789D0069EA9B /* CustomBasicViewController.swift in Sources */,
 				AAA21B3F2C4A8D130069EA9B /* ViewController.swift in Sources */,
 				AAA21B5F2C4B89840069EA9B /* CustomTableViewController.swift in Sources */,
 				AAA21B3B2C4A8D130069EA9B /* AppDelegate.swift in Sources */,
-				AAA21B5D2C4B884B0069EA9B /* SettingViewController.swift in Sources */,
+				AAA21B5D2C4B884B0069EA9B /* FocusModeViewController.swift in Sources */,
 				AAA21B3D2C4A8D130069EA9B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
