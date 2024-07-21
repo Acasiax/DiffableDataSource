@@ -23,32 +23,50 @@ class TravelListViewController: UIViewController {
         case main
     }
     
+    lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "검색"
+        searchBar.delegate = self
+        return searchBar
+    }()
+    
+    var filteredList: [User] = []
+    
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
     
     var dataSource: UICollectionViewDiffableDataSource<Section, User>!
     
     let list = [
-            User(username: "Hue", message: "왜요? 요즘 코딩이 대세인데", date: "24.01.12", imageName: "person"),
-            User(username: "Jack", message: "깃허브는 푸시하셨나요?", date: "24.01.12", imageName: "person"),
-            User(username: "Bran", message: "과제 화이팅!", date: "24.01.11", imageName: "person"),
-            User(username: "Den", message: "벌써 퇴근하세요?ㅎㅎㅎㅎㅎ", date: "24.01.10", imageName: "person"),
-            User(username: "내옆의앞자리에개발잘하는친구", message: "내일 모닝콜 해주실분~~", date: "24.01.09", imageName: "person"),
-            User(username: "심심이", message: "아닛 주말과제라닛", date: "24.01.08", imageName: "person")
-        ]
+        User(username: "Hue", message: "왜요? 요즘 코딩이 대세인데", date: "24.01.12", imageName: "person"),
+        User(username: "Jack", message: "깃허브는 푸시하셨나요?", date: "24.01.12", imageName: "person"),
+        User(username: "Bran", message: "과제 화이팅!", date: "24.01.11", imageName: "person"),
+        User(username: "Den", message: "벌써 퇴근하세요?ㅎㅎㅎㅎㅎ", date: "24.01.10", imageName: "person"),
+        User(username: "내옆의앞자리에개발잘하는친구", message: "내일 모닝콜 해주실분~~", date: "24.01.09", imageName: "person"),
+        User(username: "심심이", message: "아닛 주말과제라닛", date: "24.01.08", imageName: "person")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(searchBar)
         view.addSubview(collectionView)
-        setupConstraints()
+    
         configureDataSource()
         updateSnapshot()
+        setupConstraints()
     }
     
     private func setupConstraints() {
+        searchBar.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+        }
+        
         collectionView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(searchBar.snp.bottom)
+            make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
+
     
     private func configureDataSource() {
         let registration = UICollectionView.CellRegistration<TravelListViewCell, User> { cell, indexPath, itemIdentifier in
@@ -76,6 +94,25 @@ class TravelListViewController: UIViewController {
         dataSource.apply(snapshot)
     }
 }
+
+
+extension TravelListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            filteredList = list
+        } else {
+            filteredList = list.filter { $0.username.contains(searchText) || $0.message.contains(searchText) }
+        }
+        updateSnapshot()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        filteredList.removeAll()
+        updateSnapshot()
+    }
+}
+
 
 // CollectionViewCell 정의
 class TravelListViewCell: UICollectionViewListCell {
