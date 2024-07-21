@@ -14,7 +14,7 @@ struct User: Hashable, Identifiable {
     let username: String
     let message: String
     let date: String
-    let imageName: UIImage?
+    let imageName: String
 }
 
 class TravelListViewController: UIViewController {
@@ -28,12 +28,12 @@ class TravelListViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, User>!
     
     let list = [
-            User(username: "Hue", message: "왜요? 요즘 코딩이 대세인데", date: "24.01.12", imageName: UIImage(systemName: "person")),
-            User(username: "Jack", message: "깃허브는 푸시하셨나요?", date: "24.01.12", imageName: UIImage(systemName: "person")),
-            User(username: "Bran", message: "과제 화이팅!", date: "24.01.11", imageName: UIImage(systemName: "person")),
-            User(username: "Den", message: "벌써 퇴근하세요?ㅎㅎㅎㅎㅎ", date: "24.01.10", imageName: UIImage(systemName: "person")),
-            User(username: "내옆의앞자리에개발잘하는친구", message: "내일 모닝콜 해주실분~~", date: "24.01.09", imageName: UIImage(systemName: "person")),
-            User(username: "심심이", message: "아닛 주말과제라닛", date: "24.01.08", imageName: UIImage(systemName: "person"))
+            User(username: "Hue", message: "왜요? 요즘 코딩이 대세인데", date: "24.01.12", imageName: "person"),
+            User(username: "Jack", message: "깃허브는 푸시하셨나요?", date: "24.01.12", imageName: "person"),
+            User(username: "Bran", message: "과제 화이팅!", date: "24.01.11", imageName: "person"),
+            User(username: "Den", message: "벌써 퇴근하세요?ㅎㅎㅎㅎㅎ", date: "24.01.10", imageName: "person"),
+            User(username: "내옆의앞자리에개발잘하는친구", message: "내일 모닝콜 해주실분~~", date: "24.01.09", imageName: "person"),
+            User(username: "심심이", message: "아닛 주말과제라닛", date: "24.01.08", imageName: "person")
         ]
     
     override func viewDidLoad() {
